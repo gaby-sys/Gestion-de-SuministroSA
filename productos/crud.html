@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Productos - Suministros S.A.</title>
+    <link rel="stylesheet" href="styles.css">
+</head> <body>    <header>
+        <h1>📦 Gestión de Productos - Suministros S.A. 📦</h1>
+    </header> <main> <form action="mostrar_productos.php" method="POST">
+            <h2>📝 Registrar Producto</h2>
+            <label for="nombre">📛 Nombre del Producto:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="descripcion">📜 Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+
+            <label for="categoria">🏷️ Categoría:</label>
+            <input type="text" id="categoria" name="categoria" required>
+
+            <label for="precio_venta">💰 Precio de Venta:</label>
+            <input type="number" step="0.01" id="precio_venta" name="precio_venta" required>
+
+            <label for="costo_adquisicion">🛒 Costo de Adquisición:</label>
+            <input type="number" step="0.01" id="costo_adquisicion" name="costo_adquisicion" required>
+
+            <label for="stock_actual">📦 Stock Actual:</label>
+            <input type="number" id="stock_actual" name="stock_actual" required>
+
+            <label for="stock_minimo">⚠️ Stock Mínimo:</label>
+            <input type="number" id="stock_minimo" name="stock_minimo" required>
+
+            <label for="unidad_medida">⚖️ Unidad de Medida:</label>
+            <input type="text" id="unidad_medida" name="unidad_medida" required>
+            <label for="sku">🆔 SKU:</label>
+<input type="text" id="sku" name="sku" required>
+<button type="submit">➕ Agregar Producto</button>
+<button type="button" onclick="window.location.href='mostrar_productos.php'">📋 Ver Productos Registrados</button>
+<button type="button" onclick="window.location.href='../proveedor/mostrar_proveedores.php'">📦 Proveedores</button>
+        </form>
+        <section>
+            <h2>📋 Lista de Productos</h2>
+            <div id="tabla">
+                <?php include 'mostrar_productos.php'; ?>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
