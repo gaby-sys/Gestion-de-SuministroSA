@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="crudcito.css">
+</head>
+<header>
+    <h1>📦 Gestión de Clientes - Suministros S.A. 📦</h1>  </header>
+<body> <main>
+        <h1>👥 Gestión de Clientes</h1>
+        <form action="save_cliente.php" method="POST">
+            
+            <label for="razon_social">🏢 Razón Social:</label>
+            <input type="text" id="razon_social" name="razon_social" required>
+
+            <label for="nombre_contacto">🙋‍♂️ Nombre de Contacto:</label>
+            <input type="text" id="nombre_contacto" name="nombre_contacto" required>
+
+            <label for="telefono">📞 Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="email">📧 Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="direccion_facturacion">🏠 Dirección de Facturación:</label>
+            <input type="text" id="direccion_facturacion" name="direccion_facturacion" required>
+
+            <label for="condiciones_pago">💳 Condiciones de Pago:</label>
+            <select id="condiciones_pago" name="condiciones_pago" required>
+                <option value="contado">💰 Contado</option>
+                <option value="credito">💳 Crédito</option>
+                <option value="pagos_parciales">💸 Pagos Parciales</option>
+            </select>
+    
+            <label for="tipo_cliente">🔖 Tipo de Cliente:</label>
+            <select id="tipo_cliente" name="tipo_cliente" required>
+                <option value="mayorista">🏢 Mayorista</option>
+                <option value="minorista">🛍️ Minorista</option>
+                <option value="corporativo">🏢 Corporativo</option>
+            </select>
+    
+            <label for="estado_cliente">🟢 Estado del Cliente:</label>
+            <select id="estado_cliente" name="estado_cliente">
+                <option value="activo">✅ Activo</option>
+                <option value="inactivo">❌ Inactivo</option>
+            </select>
+
+            <button type="submit" onclick="window.location.href='save_cliente.php'">➕ Agregar Cliente</button>
+            <button type="button" onclick="window.location.href='mostrar_clientes.php'">📋 Ver Clientes Registrados</button>
+            <button type="button" onclick="window.location.href='../proveedor/mostrar_proveedores.php'">📦 Proveedores</button>
+        </form>
+        <section>
+            <h2>📋 Lista de Clientes</h2>
+            <div id="tabla">
+                <?php include 'mostrar_clientes.php'; ?>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
