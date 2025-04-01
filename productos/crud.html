@@ -35,6 +35,19 @@
             <label for="sku">🆔 SKU:</label>
 <input type="text" id="sku" name="sku" required>
 
+<label for="lote">🔢 Lote:</label>
+            <input type="text" id="lote" name="lote" required>
+
+            <label for="estado">📦 Estado:</label>
+            <select id="estado" name="estado" required style="width: 200px; font-size: 16px;">
+                <option value="Disponible">✅ Disponible</option>
+                <option value="Reservado">🔒 Reservado</option>
+                <option value="Dañado">❌ Dañado</option>
+                <option value="En tránsito">🚚 En tránsito</option>
+            </select><br><br>
+            
+
+
 <button type="submit">➕ Agregar Producto</button>
 <button type="button" onclick="window.location.href='mostrar_productos.php'">📋 Ver Productos Registrados</button>
 <button type="button" onclick="window.location.href='../proveedor/mostrar_proveedores.php'">📦 Proveedores</button>

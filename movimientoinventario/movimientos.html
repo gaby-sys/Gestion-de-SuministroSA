@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos de Inventario</title>
+    <link rel="stylesheet" href="crudcito.css">
+</head>
+<body>  <header>
+        <h1>📦 Registro de Movimientos de Inventarios</h1>
+    </header><main>
+        <section id="movimientos">
+            <h2>🔄 Movimientos de Inventario</h2>
+            <form action="insertar_movimiento.php" method="POST">
+                <label for="inventario_id">🔢 Producto:</label>
+                <input type="text" id="inventario_id" name="inventario_id" required placeholder="Escribe el ID del producto"><br><br>
+
+                <label for="fecha_movimiento">📅 Fecha de Movimiento:</label>
+                <input type="date" id="fecha_movimiento" name="fecha_movimiento" required><br><br>
+
+                <label for="tipo_movimiento">🔄 Tipo de Movimiento:</label>
+                <select id="tipo_movimiento" name="tipo_movimiento" required>
+                    <option value="Entrada">➕ Entrada</option>
+                    <option value="Salida">➖ Salida</option>
+                </select><br><br>
+
+                <label for="cantidad">🔢 Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad movida" required><br><br>
+
+                <label for="motivo">📋 Motivo:</label>
+<input type="text" id="motivo" name="motivo" placeholder="Motivo del movimiento" required><br><br>
+
+                <button type="submit">💾 Registrar Movimiento</button>
+                <button type="button" onclick="window.location.href='mostrar_movimientos.php'">📋 Ver Movimientos</button>
+            </form> </section> </main>  <footer>
+        <p>📞 Contacto: soporte@suministros.com | Todos los derechos reservados &copy; 2025</p>
+    </footer></body></html>

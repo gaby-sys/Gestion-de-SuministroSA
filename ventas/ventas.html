@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Ventas</title>
+    <link rel="stylesheet" href="crudcito.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 Registro de Ventas</h1>
+    </header>
+    <main>
+        <section id="formulario">
+            <h2>📝 Agregar Nueva Venta</h2>
+            <form action="insertar_venta.php" method="POST">
+                <label for="cliente">👤 Cliente:</label>
+                <input type="text" id="cliente" name="cliente" placeholder="ID del cliente" required><br><br>
+
+                <label for="fecha_venta">📅 Fecha de Venta:</label>
+                <input type="date" id="fecha_venta" name="fecha_venta" required><br><br>
+
+                <label for="numero_factura">🧾 Número de Factura:</label>
+                <input type="text" id="numero_factura" name="numero_factura" placeholder="Ejemplo: F12345" required><br><br>
+
+                <label for="monto_total">💵 Monto Total:</label>
+                <input type="number" id="monto_total" name="monto_total" placeholder="Monto total de la venta" step="0.01" required><br><br>
+
+                <label for="metodo_pago">💳 Método de Pago:</label>
+                <select id="metodo_pago" name="metodo_pago" required>
+                    <option value="Efectivo">💵 Efectivo</option>
+                    <option value="Transferencia Bancaria">🏦 Transferencia Bancaria</option>
+                    <option value="Cheque">📑 Cheque</option>
+                    <option value="Tarjeta de Crédito">💳 Tarjeta de Crédito</option>
+                </select><br><br>
+                <label for="condicion_pago">📜 Condición de Pago:</label>
+                <input type="text" id="condicion_pago" name="condicion_pago" placeholder="Ejemplo: Contado" required><br><br>
+
+                <label for="fecha_entrega">🚚 Fecha de Entrega:</label>
+                <input type="date" id="fecha_entrega" name="fecha_entrega"><br><br>
+
+                <label for="estado_venta">📌 Estado de Venta:</label>
+                <select id="estado_venta" name="estado_venta" required>
+                    <option value="Pendiente">⏳ Pendiente</option>
+                    <option value="Completada">✅ Completada</option>
+                    <option value="Cancelada">❌ Cancelada</option>
+                </select><br><br>
+
+                <label for="observaciones">📝 Observaciones:</label>
+                <textarea id="observaciones" name="observaciones" placeholder="Comentarios adicionales"></textarea><br><br>
+
+                <h3>🎲 Detalle de Venta</h3>
+
+                <label for="producto">📦 Producto:</label>
+                <input type="text" id="producto" name="producto" placeholder="Nombre del producto" required><br><br>
+                
+                <label for="cantidad">🔢 Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad del producto" required><br><br>
+                
+                <label for="precio_unitario">💲 Precio Unitario:</label>
+                <input type="number" id="precio_unitario" name="precio_unitario" step="0.01" required><br><br>
+                <button type="submit">💾 Registrar Venta</button>
+                <button type="button" onclick="window.location.href='mostrar_ventas.php'">📋 Ver Ventas Registradas</button>
+                <button type="button" onclick="window.location.href='../compras/mostrar_compras.php'">🛒 Compras</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>📞 Contacto: soporte@suministros.com | Todos los derechos reservados &copy; 2025</p>
+    </footer>
+</body>
+</html>

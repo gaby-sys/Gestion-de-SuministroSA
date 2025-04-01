@@ -29,15 +29,17 @@ include '../conexion/conexion.php';
                         <th>Stock Actual</th>
                         <th>Stock Mínimo</th>
                         <th>Unidad Medida</th>
+                        <th>Estado</th>
+                        <th>Lote</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     try {
-                        $sql = "SELECT ProductoID, Nombre, Descripcion, Categoria, SKU, PrecioVenta, CostoAdquisicion, StockActual, StockMinimo, UnidadMedida FROM Productos";
+                        $sql = "SELECT ProductoID, Nombre, Descripcion, Categoria, SKU, PrecioVenta, CostoAdquisicion, StockActual, StockMinimo, UnidadMedida, Estado, Lote FROM Productos";
                         $stmt = $conn->query($sql);
-                        echo $stmt->rowCount(); 
+                        echo $stmt->rowCount(); // Mostrar la cantidad de productos encontrados
                         if ($stmt) {
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr>
@@ -51,16 +53,19 @@ include '../conexion/conexion.php';
                                     <td>" . htmlspecialchars($row['StockActual']) . "</td>
                                     <td>" . htmlspecialchars($row['StockMinimo']) . "</td>
                                     <td>" . htmlspecialchars($row['UnidadMedida']) . "</td>
+                                    <td>" . htmlspecialchars($row['Estado']) . "</td>
+                                    <td>" . htmlspecialchars($row['Lote']) . "</td>
                                     <td>
                                         <a href='update.php?producto_id=" . htmlspecialchars($row['ProductoID']) . "'>Editar</a> | 
                                         <a href='Eliminar.php?producto_id=" . htmlspecialchars($row['ProductoID']) . "'>Eliminar</a>
                                     </td>
-                                </tr>"; }
+                                </tr>";
+                            }
                         } else {
-                            echo "<tr><td colspan='11'>No se encontraron productos.</td></tr>";
+                            echo "<tr><td colspan='13'>No se encontraron productos.</td></tr>";
                         }
                     } catch (PDOException $e) {
-                        echo "<tr><td colspan='11'>Error al cargar los productos: " . $e->getMessage() . "</td></tr>";
+                        echo "<tr><td colspan='13'>Error al cargar los productos: " . $e->getMessage() . "</td></tr>";
                     }
                     ?>
                 </tbody>

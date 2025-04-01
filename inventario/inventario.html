@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Inventarios</title>
+    <link rel="stylesheet" href="crudcito.css">
+</head>
+<body>
+    <header>
+        <h1>📦 Registro de Inventarios</h1>
+    </header>
+    <main>
+        <section id="formulario">
+            <h2>📝 Agregar Nuevo Producto</h2>
+            <form action="insertar_inventario.php" method="POST">
+                <label for="nombre">🔤 Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto" required><br><br>
+
+                <label for="descripcion">📝 Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" placeholder="Descripción del producto" required><br><br>
+
+                <label for="categoria">🏷 Categoría:</label>
+                <input type="text" id="categoria" name="categoria" placeholder="Categoría del producto" required><br><br>
+
+                <label for="precio_venta">💲 Precio de Venta:</label>
+                <input type="number" id="precio_venta" name="precio_venta" step="0.01" placeholder="Precio de venta" required><br><br>
+
+                <label for="costo_adquisicion">💸 Costo de Adquisición:</label>
+                <input type="number" id="costo_adquisicion" name="costo_adquisicion" step="0.01" placeholder="Costo de adquisición" required><br><br>
+
+                <label for="stock_actual">📦 Stock Actual:</label>
+                <input type="number" id="stock_actual" name="stock_actual" placeholder="Stock actual del producto" required><br><br>
+
+                <label for="stock_minimo">📉 Stock Mínimo:</label>
+                <input type="number" id="stock_minimo" name="stock_minimo" placeholder="Stock mínimo" required><br><br>
+
+                <label for="unidad_medida">📏 Unidad de Medida:</label>
+                <input type="text" id="unidad_medida" name="unidad_medida" placeholder="Unidad de medida" required><br><br>
+
+                <label for="sku">🔑 SKU:</label>
+                <input type="text" id="sku" name="sku" placeholder="SKU del producto" required><br><br>
+
+                <label for="stock_maximo">📈 Stock Máximo:</label>
+                <input type="number" id="stock_maximo" name="stock_maximo" placeholder="Stock máximo" required><br><br>
+
+                <label for="estado">✅ Estado:</label>
+<select id="estado" name="estado" required>
+    <option value="Disponible">✅ Disponible</option>
+    <option value="Dañado">⚠️ Dañado</option>
+    <option value="En tránsito">🚚 En tránsito</option>
+    <option value="Reservado">📦 Reservado</option>
+</select><br><br>
+
+                <label for="lote">🗂 Lote:</label>
+                <input type="text" id="lote" name="lote" placeholder="Número de lote" required><br><br>
+
+                <button type="submit">💾 Registrar Producto</button>
+                <button type="button" onclick="window.location.href='mostrar_inventario.php'">📋 Ver Inventario</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>📞 Contacto: soporte@suministros.com | Todos los derechos reservados &copy; 2025</p>
+    </footer>
+</body>
+</html>
